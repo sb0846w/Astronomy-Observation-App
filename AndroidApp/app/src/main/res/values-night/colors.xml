@@ -1,0 +1,11 @@
+<resources>
+    <!-- Night-sky palette: dark navy background, soft text, warm amber accent -->
+    <color name="brand_primary">#9FA8DA</color>
+    <color name="brand_on_primary">#0D1033</color>
+    <color name="brand_secondary">#FFCA28</color>
+    <color name="brand_on_secondary">#1A1A1A</color>
+    <color name="page_background">#0B0E1F</color>
+    <color name="card_background">#161A33</color>
+    <color name="text_secondary">#AEB4D0</color>
+    <color name="uploaded_tint">#81C784</color>
+</resources>

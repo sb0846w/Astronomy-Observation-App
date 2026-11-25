@@ -1,0 +1,9 @@
+<!-- Simple app icon: amber star on a night-sky circle -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="24" android:viewportHeight="24">
+    <path android:fillColor="#1A237E" android:pathData="M12,12m-12,0a12,12 0,1 1,24 0a12,12 0,1 1,-24 0"/>
+    <path android:fillColor="#FFCA28" android:pathData="M12,16.4L16.1,18.9l-1.1,-4.7L18.6,11l-4.8,-0.4L12,6.2 10.2,10.6 5.4,11l3.6,3.2 -1.1,4.7z"/>
+    <path android:fillColor="#FFFFFF" android:pathData="M6,6m-0.6,0a0.6,0.6 0,1 1,1.2 0a0.6,0.6 0,1 1,-1.2 0"/>
+    <path android:fillColor="#FFFFFF" android:pathData="M18,5m-0.4,0a0.4,0.4 0,1 1,0.8 0a0.4,0.4 0,1 1,-0.8 0"/>
+</vector>

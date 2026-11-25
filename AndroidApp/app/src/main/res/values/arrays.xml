@@ -1,0 +1,105 @@
+<resources>
+    <string-array name="sky_conditions">
+        <item>Clear</item>
+        <item>Mostly clear</item>
+        <item>Partly cloudy</item>
+        <item>Hazy</item>
+        <item>Mostly cloudy</item>
+        <item>Light pollution heavy</item>
+        <item>Windy</item>
+        <item>Moonlit sky</item>
+    </string-array>
+
+    <string-array name="object_types">
+        <item>Planet</item>
+        <item>Moon</item>
+        <item>Star</item>
+        <item>Double star</item>
+        <item>Star cluster</item>
+        <item>Nebula</item>
+        <item>Galaxy</item>
+        <item>Comet</item>
+        <item>Meteor</item>
+        <item>Satellite / ISS</item>
+        <item>Other</item>
+    </string-array>
+
+    <!-- Suggestions for the object name. Same index as common_object_types below. -->
+    <string-array name="common_objects">
+        <item>Moon</item>
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+        <item>Sirius</item>
+        <item>Betelgeuse</item>
+        <item>Polaris</item>
+        <item>Vega</item>
+        <item>Albireo</item>
+        <item>Pleiades (M45)</item>
+        <item>Orion Nebula (M42)</item>
+        <item>Ring Nebula (M57)</item>
+        <item>Andromeda Galaxy (M31)</item>
+        <item>Hercules Cluster (M13)</item>
+        <item>Double Cluster</item>
+        <item>International Space Station</item>
+    </string-array>
+
+    <string-array name="common_object_types">
+        <item>Moon</item>
+        <item>Planet</item>
+        <item>Planet</item>
+        <item>Planet</item>
+        <item>Planet</item>
+        <item>Planet</item>
+        <item>Planet</item>
+        <item>Planet</item>
+        <item>Star</item>
+        <item>Star</item>
+        <item>Star</item>
+        <item>Star</item>
+        <item>Double star</item>
+        <item>Star cluster</item>
+        <item>Nebula</item>
+        <item>Nebula</item>
+        <item>Galaxy</item>
+        <item>Star cluster</item>
+        <item>Star cluster</item>
+        <item>Satellite / ISS</item>
+    </string-array>
+
+    <string-array name="sky_locations">
+        <item>North</item>
+        <item>North-east</item>
+        <item>East</item>
+        <item>South-east</item>
+        <item>South</item>
+        <item>South-west</item>
+        <item>West</item>
+        <item>North-west</item>
+        <item>Overhead (zenith)</item>
+        <item>Low on the horizon</item>
+        <item>Andromeda</item>
+        <item>Aquarius</item>
+        <item>Aquila</item>
+        <item>Auriga</item>
+        <item>Canis Major</item>
+        <item>Cassiopeia</item>
+        <item>Cygnus</item>
+        <item>Gemini</item>
+        <item>Hercules</item>
+        <item>Leo</item>
+        <item>Lyra</item>
+        <item>Orion</item>
+        <item>Perseus</item>
+        <item>Sagittarius</item>
+        <item>Scorpius</item>
+        <item>Taurus</item>
+        <item>Ursa Major</item>
+        <item>Ursa Minor</item>
+        <item>Virgo</item>
+    </string-array>
+</resources>

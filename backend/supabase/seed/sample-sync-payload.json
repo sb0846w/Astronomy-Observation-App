@@ -1,0 +1,93 @@
+{
+  "p_sessions": [
+    {
+      "id": "a1b2c3d4-0001-4000-8000-000000000001",
+      "session_title": "Winter planets from the park",
+      "session_date": "2026-11-20",
+      "session_time": "20:30",
+      "observing_location": "Greenwich Park, London",
+      "duration_hours": 2,
+      "description": "Quick session after work, some light pollution.",
+      "sky_conditions": "Mostly clear",
+      "observer_name": "Demo Observer",
+      "equipment": "Telescope",
+      "bortle_scale": 8,
+      "seeing_rating": 3,
+      "latitude": 51.4769,
+      "longitude": -0.0005,
+      "observations": [
+        {
+          "id": "b1b2c3d4-0001-4000-8000-000000000001",
+          "celestial_object": "Jupiter",
+          "object_type": "Planet",
+          "location_in_sky": "Gemini, east",
+          "observation_details": "Two cloud belts clearly visible, four moons in a line.",
+          "additional_comments": "130 mm reflector, 10 mm eyepiece",
+          "observed_time": "20:45",
+          "has_photo": false
+        },
+        {
+          "id": "b1b2c3d4-0001-4000-8000-000000000002",
+          "celestial_object": "Moon",
+          "object_type": "Moon",
+          "location_in_sky": "South-east, low",
+          "observation_details": "Waxing gibbous, craters sharp along the terminator.",
+          "observed_time": "21:10",
+          "has_photo": true
+        },
+        {
+          "id": "b1b2c3d4-0001-4000-8000-000000000003",
+          "celestial_object": "Saturn",
+          "object_type": "Planet",
+          "location_in_sky": "Aquarius, south-west",
+          "observation_details": "Rings almost edge-on, Titan visible to the east.",
+          "observed_time": "21:30",
+          "has_photo": false
+        }
+      ]
+    },
+    {
+      "id": "a1b2c3d4-0002-4000-8000-000000000002",
+      "session_title": "Dark sky trip",
+      "session_date": "2026-11-15",
+      "session_time": "22:00",
+      "observing_location": "Galloway Forest, Scotland",
+      "duration_hours": 3.5,
+      "sky_conditions": "Clear",
+      "observer_name": "Demo Observer",
+      "equipment": "Binoculars",
+      "bortle_scale": 2,
+      "seeing_rating": 4,
+      "observations": [
+        {
+          "id": "b1b2c3d4-0002-4000-8000-000000000001",
+          "celestial_object": "Andromeda Galaxy (M31)",
+          "object_type": "Galaxy",
+          "location_in_sky": "Andromeda, high in the south",
+          "observation_details": "Long oval glow, bright core easy with averted vision.",
+          "additional_comments": "10x50 binoculars",
+          "observed_time": "22:20",
+          "has_photo": false
+        },
+        {
+          "id": "b1b2c3d4-0002-4000-8000-000000000002",
+          "celestial_object": "Orion Nebula (M42)",
+          "object_type": "Nebula",
+          "location_in_sky": "Orion's sword, south-east",
+          "observation_details": "Bright fuzzy patch around the Trapezium stars.",
+          "observed_time": "23:05",
+          "has_photo": false
+        },
+        {
+          "id": "b1b2c3d4-0002-4000-8000-000000000003",
+          "celestial_object": "Jupiter",
+          "object_type": "Planet",
+          "location_in_sky": "Gemini, east",
+          "observation_details": "Small bright disc, three moons visible.",
+          "observed_time": "23:30",
+          "has_photo": false
+        }
+      ]
+    }
+  ]
+}

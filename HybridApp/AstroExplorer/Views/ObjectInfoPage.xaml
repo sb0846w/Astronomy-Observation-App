@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:AstroExplorer.Models"
+             x:Class="AstroExplorer.Views.ObjectInfoPage"
+             x:DataType="models:CelestialObjectInfo"
+             Title="{Binding Name}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="FavouriteItem" Clicked="OnFavouriteClicked" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="0,8,0,24">
+            <Border Style="{StaticResource Card}">
+                <VerticalStackLayout Spacing="4">
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                        <Label Text="{Binding Symbol}" FontSize="44" VerticalOptions="Center"
+                               TextColor="{AppThemeBinding Light={StaticResource AccentLight}, Dark={StaticResource AccentDark}}" />
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                            <Label Text="{Binding Name}" Style="{StaticResource Heading}" />
+                            <Label Text="{Binding Type}" Style="{StaticResource Accent}" />
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <Label Text="{Binding Description}" Margin="0,8,0,0" />
+
+                    <Label Text="CONSTELLATION" Style="{StaticResource Section}" />
+                    <Label Text="{Binding Constellation}" />
+                    <Label Text="DISTANCE" Style="{StaticResource Section}" />
+                    <Label Text="{Binding Distance}" />
+                    <Label Text="BRIGHTNESS" Style="{StaticResource Section}" />
+                    <Label Text="{Binding Brightness}" />
+                    <Label Text="BEST SEEN" Style="{StaticResource Section}" />
+                    <Label Text="{Binding BestSeen}" />
+                    <Label Text="OBSERVING TIPS" Style="{StaticResource Section}" />
+                    <Label Text="{Binding ObservingTips}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Label x:Name="ObservationsHeader" Style="{StaticResource Title}" Margin="16,16,16,4" />
+            <Label x:Name="NoObservationsLabel" Style="{StaticResource Subtle}" Margin="16,0"
+                   Text="Nobody has uploaded an observation of this object yet." />
+
+            <!-- BindableLayout instead of a CollectionView because it sits inside a ScrollView -->
+            <VerticalStackLayout x:Name="ObservationsStack">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="models:CelestialObservation">
+                        <Border Style="{StaticResource Card}">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnObservationTapped" />
+                            </Border.GestureRecognizers>
+                            <VerticalStackLayout Spacing="2">
+                                <Label Text="{Binding SessionSummary}" Style="{StaticResource Accent}" />
+                                <Label Text="{Binding Details}" MaxLines="3" LineBreakMode="TailTruncation" />
+                                <Label Text="{Binding SkyLocation, StringFormat='Seen in: {0}'}" Style="{StaticResource Subtle}" FontSize="12" />
+                            </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

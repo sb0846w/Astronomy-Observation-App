@@ -1,0 +1,85 @@
+{
+  "sessions": {
+    "demo-session-1": {
+      "cloudId": "demo-session-1",
+      "name": "Winter planets from the park",
+      "date": "2026-11-20",
+      "time": "20:30",
+      "location": "Greenwich Park, London",
+      "durationHours": 2,
+      "description": "Quick session after work, some light pollution.",
+      "skyConditions": "Mostly clear",
+      "observerName": "Demo Observer",
+      "equipment": "Telescope",
+      "bortleScale": 8,
+      "seeingRating": 3,
+      "latitude": 51.4769,
+      "longitude": -0.0005,
+      "uploadedAt": 1763670000000,
+      "observations": [
+        {
+          "objectName": "Jupiter",
+          "objectType": "Planet",
+          "skyLocation": "Gemini, east",
+          "details": "Two cloud belts clearly visible, four moons in a line.",
+          "comments": "130 mm reflector, 10 mm eyepiece",
+          "observedTime": "20:45",
+          "hasPhoto": false
+        },
+        {
+          "objectName": "Moon",
+          "objectType": "Moon",
+          "skyLocation": "South-east, low",
+          "details": "Waxing gibbous, craters sharp along the terminator.",
+          "comments": "",
+          "observedTime": "21:10",
+          "hasPhoto": true
+        }
+      ]
+    },
+    "demo-session-2": {
+      "cloudId": "demo-session-2",
+      "name": "Dark sky trip",
+      "date": "2026-11-15",
+      "time": "22:00",
+      "location": "Galloway Forest, Scotland",
+      "durationHours": 3.5,
+      "description": "",
+      "skyConditions": "Clear",
+      "observerName": "Demo Observer",
+      "equipment": "Binoculars",
+      "bortleScale": 2,
+      "seeingRating": 4,
+      "uploadedAt": 1763240000000,
+      "observations": [
+        {
+          "objectName": "Andromeda Galaxy (M31)",
+          "objectType": "Galaxy",
+          "skyLocation": "Andromeda, high in the south",
+          "details": "Long oval glow, bright core easy with averted vision.",
+          "comments": "10x50 binoculars",
+          "observedTime": "22:20",
+          "hasPhoto": false
+        },
+        {
+          "objectName": "Pleiades (M45)",
+          "objectType": "Star cluster",
+          "skyLocation": "Taurus, east",
+          "details": "Counted seven stars naked eye, dozens in binoculars.",
+          "comments": "",
+          "observedTime": "22:40",
+          "hasPhoto": false
+        },
+        {
+          "objectName": "Jupiter",
+          "objectType": "Planet",
+          "skyLocation": "Gemini, east",
+          "details": "Small bright disc, three moons visible.",
+          "comments": "",
+          "observedTime": "23:30",
+          "hasPhoto": false
+        }
+      ]
+    }
+  }
+}

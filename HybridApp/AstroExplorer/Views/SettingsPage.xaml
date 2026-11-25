@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AstroExplorer.Views.SettingsPage"
+             Title="Settings">
+    <ScrollView>
+        <VerticalStackLayout Padding="0,8,0,24">
+
+            <Border Style="{StaticResource Card}">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="APPEARANCE" Style="{StaticResource Section}" Margin="0" />
+                    <Label Text="Dark mode protects your night vision while observing." Style="{StaticResource Subtle}" />
+                    <Picker x:Name="ThemePicker" Title="Theme" SelectedIndexChanged="OnThemeChanged">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Follow system setting</x:String>
+                                <x:String>Light</x:String>
+                                <x:String>Dark (night mode)</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Style="{StaticResource Card}">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="CLOUD DATABASE" Style="{StaticResource Section}" Margin="0" />
+                    <Label Text="Supabase project URL (the same one used by the AstroLog Android app)."
+                           Style="{StaticResource Subtle}" />
+                    <Entry x:Name="UrlEntry" Keyboard="Url" Placeholder="https://your-project.supabase.co" />
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
+                        <Button Text="Save" Clicked="OnSaveUrlClicked" />
+                        <Button Grid.Column="1" Text="Test connection" Clicked="OnTestClicked" />
+                    </Grid>
+                    <ActivityIndicator x:Name="Busy" IsRunning="False" IsVisible="False" />
+                    <Label x:Name="ConnectionResult" Style="{StaticResource Subtle}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Style="{StaticResource Card}">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="OFFLINE DATA" Style="{StaticResource Section}" Margin="0" />
+                    <Label x:Name="StatsLabel" />
+                    <Label Text="The last download is saved on this device so you can browse observations without a connection."
+                           Style="{StaticResource Subtle}" />
+                    <Button Text="Clear saved data" Clicked="OnClearCacheClicked" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="AstroExplorer 1.0 • COMP1424 coursework" Style="{StaticResource Subtle}"
+                   HorizontalTextAlignment="Center" Margin="0,12" FontSize="12" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

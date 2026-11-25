@@ -1,0 +1,8 @@
+COMP1424 Mobile Application Development - Group List
+
+Student 1: <Full name>    ID: <Student ID>    Role: Feature a (session form, validation, GPS)
+Student 2: <Full name>    ID: <Student ID>    Role: Feature b (SQLite, list/edit/delete, dark mode)
+Student 3: <Full name>    ID: <Student ID>    Role: Features c + d (observations, cloud upload, photos)
+Student 4: <Full name>    ID: <Student ID>    Role: Feature e (.NET MAUI hybrid app)
+
+Git repository (Azure DevOps): <paste link here>

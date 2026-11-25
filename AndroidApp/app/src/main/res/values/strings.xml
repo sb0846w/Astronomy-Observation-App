@@ -1,0 +1,101 @@
+<resources>
+    <string name="app_name">AstroLog</string>
+
+    <!-- Main screen -->
+    <string name="sessions_title">Observing sessions</string>
+    <string name="new_session">New session</string>
+    <string name="empty_sessions">No observing sessions yet.\nTap \"New session\" to log your first night under the stars.</string>
+    <string name="search_hint">Search sessions</string>
+    <string name="menu_upload">Upload all to cloud</string>
+    <string name="menu_toggle_theme">Toggle dark mode</string>
+    <string name="menu_reset">Delete all data</string>
+    <string name="menu_edit">Edit</string>
+    <string name="menu_delete">Delete</string>
+    <string name="session_options">Session options</string>
+    <string name="uploaded">Uploaded to cloud</string>
+
+    <!-- Session form -->
+    <string name="title_add_session">New observing session</string>
+    <string name="title_edit_session">Edit session</string>
+    <string name="label_name">Session name *</string>
+    <string name="label_observer">Observer name</string>
+    <string name="label_date">Date *</string>
+    <string name="label_time">Start time *</string>
+    <string name="label_location">Location *</string>
+    <string name="label_duration">Expected duration *</string>
+    <string name="label_sky">Sky / weather conditions</string>
+    <string name="label_description">Description</string>
+    <string name="label_equipment">Equipment</string>
+    <string name="label_bortle">Sky darkness (Bortle scale): %1$d</string>
+    <string name="label_seeing">Seeing (atmospheric steadiness)</string>
+    <string name="required_note">* required field</string>
+    <string name="use_my_location">Use my current location</string>
+    <string name="save_session">Review &amp; save</string>
+    <string name="equip_naked_eye">Naked eye</string>
+    <string name="equip_binoculars">Binoculars</string>
+    <string name="equip_telescope">Telescope</string>
+
+    <!-- Validation -->
+    <string name="error_required">This field is required</string>
+    <string name="error_duration">Enter a duration between 0.1 and 24 hours</string>
+    <string name="error_fix_fields">Please fill in the highlighted fields</string>
+
+    <!-- Confirmation -->
+    <string name="confirm_title">Please confirm the details</string>
+    <string name="confirm_save">Confirm &amp; save</string>
+    <string name="confirm_edit">Go back &amp; edit</string>
+    <string name="session_saved">Session saved</string>
+    <string name="session_updated">Session updated</string>
+
+    <!-- Location -->
+    <string name="locating">Finding your location…</string>
+    <string name="location_permission_denied">Location permission denied – please type the location instead</string>
+    <string name="location_unavailable">Could not get a location fix. Make sure location is switched on.</string>
+
+    <!-- Detail -->
+    <string name="title_session_detail">Session details</string>
+    <string name="observations_header">Celestial objects observed (%1$d)</string>
+    <string name="empty_observations">No objects recorded yet. Tap \"Add object\" to record what you saw.</string>
+    <string name="add_object">Add object</string>
+    <string name="delete_session_title">Delete this session?</string>
+    <string name="delete_session_message">\"%1$s\" and all of its %2$d observation(s) will be permanently deleted from this phone.</string>
+    <string name="session_deleted">Session deleted</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+
+    <!-- Observation form -->
+    <string name="title_add_observation">Add celestial object</string>
+    <string name="title_edit_observation">Edit celestial object</string>
+    <string name="label_object_name">Celestial object *</string>
+    <string name="label_object_type">Object type</string>
+    <string name="label_sky_location">Location in the sky *</string>
+    <string name="hint_sky_location">Constellation, direction or altitude</string>
+    <string name="label_observed_time">Time observed</string>
+    <string name="label_details">Observation details *</string>
+    <string name="hint_details">Appearance, brightness, visible features…</string>
+    <string name="label_comments">Additional comments</string>
+    <string name="hint_comments">Equipment, eyepiece, unusual features…</string>
+    <string name="label_photo">Photo (optional)</string>
+    <string name="take_photo">Camera</string>
+    <string name="choose_photo">Gallery</string>
+    <string name="remove_photo">Remove</string>
+    <string name="save_observation">Save object</string>
+    <string name="observation_saved">Object saved</string>
+    <string name="delete_observation_title">Delete this object?</string>
+    <string name="delete_observation_message">The observation of \"%1$s\" will be permanently deleted.</string>
+    <string name="photo_error">Could not attach the photo</string>
+    <string name="photo_description">Photo of the observed object</string>
+
+    <!-- Upload -->
+    <string name="uploading">Uploading your sessions…</string>
+    <string name="upload_success_title">Upload complete</string>
+    <string name="upload_success_message">%1$d session(s) and %2$d celestial object observation(s) are now saved in the cloud and can be viewed in the AstroExplorer app.</string>
+    <string name="upload_failed_title">Upload failed</string>
+    <string name="no_internet">You appear to be offline. Connect to Wi-Fi or mobile data and try again. Your data is safe on this phone.</string>
+    <string name="cloud_not_configured">The cloud database URL has not been set. Put your Supabase URL and key in CloudConfig.java.</string>
+
+    <!-- Reset -->
+    <string name="reset_title">Delete all data?</string>
+    <string name="reset_message">Every session and observation on this phone will be permanently deleted. Data already uploaded to the cloud is not affected.</string>
+    <string name="reset_done">All data deleted</string>
+</resources>

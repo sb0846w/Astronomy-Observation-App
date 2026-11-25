@@ -1,0 +1,83 @@
+# Builds the AstroExplorer .NET MAUI app as an Android APK in the cloud (GitHub-hosted Windows runner)
+# and uploads the APK as a downloadable artifact: Actions tab → this workflow → latest run → Artifacts.
+
+name: Build Android APK (AstroExplorer)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'HybridApp/**'
+      - '.github/workflows/build-android.yml'
+  workflow_dispatch:        # "Run workflow" button on the Actions tab
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-android-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PROJECT: HybridApp/AstroExplorer/AstroExplorer.csproj
+  # From AstroExplorer.csproj. On Windows the project also targets net10.0-windows…;
+  # overriding TargetFrameworks builds only Android, so the Windows workload isn't needed.
+  TFM: net10.0-android
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Install .NET 10 SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Install Java 17 (needed by the Android build tools)
+        uses: actions/setup-java@v4
+        with:
+          distribution: microsoft
+          java-version: '17'
+
+      - name: Install the .NET MAUI Android workload
+        run: dotnet workload install maui-android
+
+      - name: Install the Android SDK packages the project needs
+        shell: pwsh
+        run: >
+          dotnet build $env:PROJECT -t:InstallAndroidDependencies
+          -f $env:TFM -p:TargetFrameworks=$env:TFM
+          "-p:AndroidSdkDirectory=$env:ANDROID_SDK_ROOT"
+          -p:AcceptAndroidSdkLicenses=True
+
+      - name: Restore NuGet packages
+        shell: pwsh
+        run: dotnet restore $env:PROJECT -p:TargetFrameworks=$env:TFM
+
+      - name: Build and publish the Release APK
+        shell: pwsh
+        run: >
+          dotnet publish $env:PROJECT --no-restore
+          -c Release -f $env:TFM -p:TargetFrameworks=$env:TFM
+          -p:AndroidPackageFormats=apk
+          "-p:AndroidSdkDirectory=$env:ANDROID_SDK_ROOT"
+          -o publish
+
+      - name: List the output
+        shell: pwsh
+        run: Get-ChildItem publish -Filter *.apk | Format-Table Name, Length
+
+      - name: Upload the APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: AstroExplorer-android-apk
+          path: publish/*-Signed.apk
+          if-no-files-found: error
+          retention-days: 30

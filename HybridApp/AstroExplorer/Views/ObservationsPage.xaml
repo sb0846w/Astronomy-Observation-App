@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:AstroExplorer.Models"
+             x:Class="AstroExplorer.Views.ObservationsPage"
+             Title="Observations">
+
+    <!-- Button as well as pull-to-refresh, because pulling doesn't work with a mouse on Windows -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Refresh" Clicked="OnRefreshClicked" />
+    </ContentPage.ToolbarItems>
+
+    <Grid RowDefinitions="Auto,Auto,Auto,*">
+
+        <!-- Search box: e.g. "Jupiter", "Orion", "Andromeda" -->
+        <SearchBar x:Name="SearchBox" Grid.Row="0"
+                   Placeholder="Search objects, e.g. Jupiter, Moon, M31"
+                   TextChanged="OnSearchTextChanged"
+                   SearchButtonPressed="OnSearchPressed" />
+
+        <!-- Filter by object type -->
+        <Picker x:Name="TypePicker" Grid.Row="1" Margin="16,0"
+                Title="Filter by type"
+                SelectedIndexChanged="OnTypeChanged" />
+
+        <!-- Status line: number of results, offline / cache message -->
+        <Label x:Name="StatusLabel" Grid.Row="2" Style="{StaticResource Subtle}"
+               Margin="16,6" FontSize="13" />
+
+        <!-- Pull down to refresh from the cloud -->
+        <RefreshView x:Name="Refresher" Grid.Row="3" Refreshing="OnRefreshing">
+            <CollectionView x:Name="ObservationList"
+                            SelectionMode="Single"
+                            SelectionChanged="OnObservationSelected">
+                <CollectionView.EmptyView>
+                    <VerticalStackLayout Padding="32" Spacing="8" VerticalOptions="Center">
+                        <Label Text="🔭" FontSize="48" HorizontalTextAlignment="Center" />
+                        <Label Text="No observations found" Style="{StaticResource Title}" HorizontalTextAlignment="Center" />
+                        <Label Text="Upload sessions from the AstroLog Android app, then pull down to refresh."
+                               Style="{StaticResource Subtle}" HorizontalTextAlignment="Center" />
+                    </VerticalStackLayout>
+                </CollectionView.EmptyView>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:CelestialObservation">
+                        <Border Style="{StaticResource Card}">
+                            <VerticalStackLayout Spacing="3">
+                                <Grid ColumnDefinitions="*,Auto">
+                                    <Label Text="{Binding ObjectName}" Style="{StaticResource Title}" />
+                                    <Label Grid.Column="1" Text="{Binding TimeDisplay}" Style="{StaticResource Subtle}" VerticalOptions="Center" />
+                                </Grid>
+                                <Label Text="{Binding TypeAndLocation}" Style="{StaticResource Accent}" />
+                                <Label Text="{Binding Details}" MaxLines="2" LineBreakMode="TailTruncation" />
+                                <Label Text="{Binding SessionSummary}" Style="{StaticResource Subtle}" FontSize="12" Margin="0,4,0,0" />
+                            </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+    </Grid>
+</ContentPage>

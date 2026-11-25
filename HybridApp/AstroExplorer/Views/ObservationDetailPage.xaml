@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:AstroExplorer.Models"
+             x:Class="AstroExplorer.Views.ObservationDetailPage"
+             x:DataType="models:CelestialObservation"
+             Title="Observation">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Share" Clicked="OnShareClicked" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="0,8,0,24">
+
+            <!-- What was seen -->
+            <Border Style="{StaticResource Card}">
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="{Binding ObjectName}" Style="{StaticResource Heading}" />
+                    <Label Text="{Binding TypeAndLocation}" Style="{StaticResource Accent}" />
+
+                    <Label Text="OBSERVATION DETAILS" Style="{StaticResource Section}" />
+                    <Label Text="{Binding Details}" />
+
+                    <Label Text="ADDITIONAL COMMENTS" Style="{StaticResource Section}" IsVisible="{Binding HasComments}" />
+                    <Label Text="{Binding Comments}" IsVisible="{Binding HasComments}" />
+
+                    <Label Text="TIME OBSERVED" Style="{StaticResource Section}" />
+                    <Label Text="{Binding TimeDisplay}" />
+
+                    <Label Text="📷 The observer attached a photo on their phone." Style="{StaticResource Subtle}"
+                           IsVisible="{Binding HasPhoto}" Margin="0,8,0,0" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- The session it belongs to -->
+            <Border Style="{StaticResource Card}">
+                <VerticalStackLayout Spacing="2">
+                    <Label Text="OBSERVING SESSION" Style="{StaticResource Section}" Margin="0" />
+                    <Label Text="{Binding Session.Name}" Style="{StaticResource Title}" />
+                    <Label Style="{StaticResource Subtle}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding Session.DisplayDate}" />
+                                <Span Text=" at " />
+                                <Span Text="{Binding Session.Time}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Text="{Binding Session.Location, StringFormat='📍 {0}'}" Margin="0,6,0,0" />
+                    <Label Text="{Binding Session.ObserverDisplay, StringFormat='👤 {0}'}" />
+                    <Label Text="{Binding Session.EquipmentDisplay, StringFormat='🔭 {0}'}" />
+                    <Label Text="{Binding Session.SkyDisplay, StringFormat='☁ Sky: {0}'}" />
+                    <Label Text="{Binding Session.BortleScale, StringFormat='🌌 Bortle scale: {0} (1 = darkest)'}" />
+                    <Label Text="{Binding Session.SeeingStars, StringFormat='Seeing: {0}'}" />
+                    <Label Text="{Binding Session.DurationHours, StringFormat='⏱ Duration: {0} h'}" />
+                    <Label Text="{Binding Session.Description}" Style="{StaticResource Subtle}" Margin="0,6,0,0"
+                           IsVisible="{Binding Session.HasDescription}" />
+
+                    <Button x:Name="MapButton" Text="Show location on map" Margin="0,12,0,0"
+                            IsVisible="{Binding Session.HasCoordinates}" Clicked="OnMapClicked" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Link to the encyclopedia entry, if we know this object -->
+            <Border x:Name="InfoCard" Style="{StaticResource Card}" IsVisible="False">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="LEARN MORE" Style="{StaticResource Section}" Margin="0" />
+                    <Label x:Name="InfoSummary" />
+                    <Button x:Name="InfoButton" Clicked="OnLearnMoreClicked" />
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
