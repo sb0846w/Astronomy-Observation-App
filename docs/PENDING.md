@@ -3,7 +3,7 @@
 ## Needs you (I can't do these from here)
 1. ~~Create the cloud database~~ **Done:** Supabase backend with **no login** (publishable key only), RLS, bulk upload with device-key ownership, and search. 25/25 database tests and 21/21 live HTTPS tests pass (`backend/README.md`, `backend/TESTING.md`).
 2. ~~Build the Android app~~ **Done (25/11/2026):** `AndroidApp/app/build/outputs/apk/debug/app-debug.apk` (5.9 MB). Rebuild with Run ▶ in Android Studio or `gradlew assembleDebug`.
-3. **Build the MAUI app**: this needs Visual Studio with the .NET MAUI workload (Windows lab PC), or VS Code with the .NET MAUI extension plus the .NET 10 SDK on the Mac.
+3. ~~Build the MAUI app~~ **Done in the cloud (26/11/2026):** GitHub Actions builds the AstroExplorer APK on every push that changes `HybridApp/`, or on demand (repo → **Actions** → *Build Android APK (AstroExplorer)* → **Run workflow**). Download it from the run's **Artifacts** section. No Visual Studio or .NET needed on your laptop.
 4. **Run the end-to-end test** and the manual checks in `TEST_REPORT.md`.
 5. **Azure DevOps Git repo**: create it, add all 4 members and Markus Wolf, and have each member commit their own part every week (`TEAM_PLAN.md`).
 6. **Fill in `Group List.txt`** with names, IDs and the repo link.

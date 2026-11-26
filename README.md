@@ -58,3 +58,12 @@ See **[docs/SETUP.md](docs/SETUP.md)** for step-by-step instructions. In short:
 ## Academic integrity note
 
 These apps were developed with help from an AI assistant (Claude, by Anthropic). The coursework brief says borrowed or AI-assisted code must be **referenced and commented**, and each student's **AI reflection** must describe this honestly. Each member must also be able to explain every line of the part they present at the demonstration. See `docs/TEAM_PLAN.md`.
+
+## Cloud build (AstroExplorer APK)
+
+The MAUI app is built in the cloud by GitHub Actions (`.github/workflows/build-android.yml`) on a GitHub-hosted Windows runner. It installs .NET 10, the MAUI Android workload and the Android SDK packages, then publishes a Release APK. No Visual Studio or .NET SDK is needed locally.
+
+- **Runs automatically** on every push to `main` that changes `HybridApp/` (or the workflow file).
+- **Runs on demand:** GitHub → **Actions** → *Build Android APK (AstroExplorer)* → **Run workflow**.
+- **Download:** open the run → **Artifacts** → `AstroExplorer-android-apk` (a zip with the `…-Signed.apk`, kept for 30 days).
+- The APK is signed with a debug key, which is fine for testing and the demo. Publishing to Google Play would need your own keystore stored as a GitHub secret.

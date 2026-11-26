@@ -14,7 +14,7 @@ The full data flow:
 | Login | none needed | no accounts, by design |
 | Supabase project awake | ⚠ check on the day | free projects pause after about a week idle: Dashboard → **Restore project** |
 | Build AstroLog | Android Studio → open `AndroidApp/` → Run ▶ | or `gradlew assembleDebug` |
-| Build AstroExplorer | Visual Studio 2022/2026 with the **.NET MAUI** workload + .NET 10 SDK → open `AstroExplorer.csproj` → Run ▶ | Android emulator or Windows |
+| Build AstroExplorer | GitHub Actions (cloud) ✅ | repo `sb0846w/Astronomy-Observation-App` → **Actions** → latest *Build Android APK (AstroExplorer)* run → **Artifacts → AstroExplorer-android-apk** (a zip containing the `-Signed.apk`) |
 
 **Demo data** (shown with "(Demo)" in the title and observer "AstroLog Demo"):
 
