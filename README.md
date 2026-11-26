@@ -50,10 +50,10 @@ Both apps talk to the same **Supabase** (PostgreSQL) database through its REST A
 
 See **[docs/SETUP.md](docs/SETUP.md)** for step-by-step instructions. In short:
 
-1. The Supabase database is already set up, and its URL and key are in both apps (see `docs/SETUP.md`).
-2. Paste the URL into `AndroidApp/app/src/main/java/com/astrolog/app/network/CloudConfig.java` and `HybridApp/AstroExplorer/Services/SettingsService.cs` (or enter it later on the app's Settings tab).
-3. Open `AndroidApp/` in **Android Studio** and click Run.
-4. Open `HybridApp/AstroExplorer/AstroExplorer.csproj` in **Visual Studio 2022/2026** (with the .NET MAUI workload) and run it on the Android emulator or Windows Machine.
+1. **Cloud database: nothing to do.** The Supabase project is set up with demo data, and its URL and publishable key are already in both apps (`AndroidApp/.../network/CloudConfig.java` and `HybridApp/AstroExplorer/Services/SettingsService.cs`). No login is needed.
+2. **AstroLog (Android):** open `AndroidApp/` in **Android Studio** and click Run, or install the built `app-debug.apk`.
+3. **AstroExplorer (MAUI):** download the APK built by GitHub Actions (see "Cloud build" below). No Visual Studio or .NET is needed on your computer.
+4. **Installing the APKs:** see **[docs/INSTALL_APKS.md](docs/INSTALL_APKS.md)**. **Testing:** see **[docs/CLIENT_TESTING.md](docs/CLIENT_TESTING.md)**.
 
 ## Academic integrity note
 
